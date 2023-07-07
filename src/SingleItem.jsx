@@ -2,21 +2,19 @@ import { useState } from 'react';
 import './App.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
 
-const SingleItem = ({ key, item, removeItem }) => {
-  const [isChecked, setIsChecked] = useState(item.completed);
-
+const SingleItem = ({ item, removeItem, editItem }) => {
   return (
     <div className='single-item'>
       <input
         type='checkbox'
         className='checkbox'
-        checked={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
+        checked={item.completed}
+        onChange={() => editItem(item.id)}
       />
       <p
         style={{
           textTransform: 'capitalize',
-          textDecoration: isChecked && 'line-through',
+          textDecoration: item.completed && 'line-through',
         }}
       >
         {item.name}

@@ -42,3 +42,7 @@ const removeItem = (itemId) => {
 const newItems = items.filter((item) => item.id !== itemId);
 setItems(newItems);
 };
+
+## 7. Local Storage
+
+local storage is a built in object in the browsers that allows us to save key value pairs locally

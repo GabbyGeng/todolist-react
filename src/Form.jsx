@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Form = ({ addItem }) => {
-  const [newItemName, setNewItemName] = useState();
+  const [newItemName, setNewItemName] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +15,7 @@ const Form = ({ addItem }) => {
         type='text'
         placeholder=' type your todo items here'
         value={newItemName}
-        onChange={(event) => {
-          setNewItemName(event.target.value);
-        }}
+        onChange={(e) => setNewItemName(e.target.value)}
       />
       <button type='submit' className='form-btn'>
         Add
